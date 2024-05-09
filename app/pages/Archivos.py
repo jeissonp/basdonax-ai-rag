@@ -12,8 +12,8 @@ from common.streamlit_style import hide_streamlit_style
 hide_streamlit_style()
 
 # Define the Chroma settings
-CHROMA_SETTINGS = chromadb.HttpClient(host="host.docker.internal", port = 8000, settings=Settings(allow_reset=True, anonymized_telemetry=False))
-collection = CHROMA_SETTINGS.get_or_create_collection(name='vectordb')
+CHROMA_SETTINGS = chromadb.HttpClient(host="localhost", port = 8000, settings=Settings(allow_reset=True, anonymized_telemetry=False))
+collection = CHROMA_SETTINGS.get_or_create_collection(name='vectordb1')
 embeddings = HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2')
 
 st.title('Archivos')

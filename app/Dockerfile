@@ -1,5 +1,5 @@
 # Usa una imagen base de Python
-FROM python:3.11
+FROM python:3.6
 
 # Establecer el directorio de trabajo
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --upgrade pip
 
 # Instala las dependencias
-RUN pip install --no-cache-dir -r requirements.txt
+RUN /bin/sh -c pip install --no-cache-dir -r requirements.txt
 
 RUN python -m pip install --upgrade pip setuptools wheel
 

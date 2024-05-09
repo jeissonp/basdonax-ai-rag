@@ -65,7 +65,7 @@ class Chroma(VectorStore):
                 vectorstore = Chroma("langchain_store", embeddings)
     """
 
-    _LANGCHAIN_DEFAULT_COLLECTION_NAME = "vectordb"
+    _LANGCHAIN_DEFAULT_COLLECTION_NAME = "vectordb1"
 
     def __init__(
         self,
@@ -803,7 +803,7 @@ class Chroma(VectorStore):
 
 
 def get_unique_sources_df(chroma_settings):
-    df = pd.DataFrame(chroma_settings.get_collection('vectordb').get(include=['embeddings', 'documents', 'metadatas']))
+    df = pd.DataFrame(chroma_settings.get_collection('vectordb1').get(include=['embeddings', 'documents', 'metadatas']))
     
     # Suponiendo que 'df' es tu DataFrame original
     sources = df['metadatas'].apply(lambda x: x.get('source', None)).dropna().unique()

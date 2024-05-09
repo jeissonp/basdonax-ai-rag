@@ -29,8 +29,8 @@ source_directory = os.environ.get('SOURCE_DIRECTORY', 'documents')
 embeddings_model_name = os.environ.get('EMBEDDINGS_MODEL_NAME', 'all-MiniLM-L6-v2')
 # Create embeddings
 embeddings = HuggingFaceEmbeddings(model_name=embeddings_model_name)
-collection_name = 'vectordb'
-collection = CHROMA_SETTINGS.get_or_create_collection(name='vectordb')
+collection_name = 'vectordb1'
+collection = CHROMA_SETTINGS.get_or_create_collection(name='vectordb1')
 chunk_size = 500
 chunk_overlap = 50
 
@@ -100,7 +100,7 @@ def load_single_document(uploaded_file) -> List[Document]:
 
 
 def get_unique_sources_df(chroma_settings):
-    df = pd.DataFrame(chroma_settings.get_collection('vectordb').get(include=['embeddings', 'documents', 'metadatas']))
+    df = pd.DataFrame(chroma_settings.get_collection('vectordb1').get(include=['embeddings', 'documents', 'metadatas']))
     
     # Suponiendo que 'df' es tu DataFrame original
     sources = df['metadatas'].apply(lambda x: x.get('source', None)).dropna().unique()

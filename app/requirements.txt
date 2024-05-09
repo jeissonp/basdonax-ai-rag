@@ -2,7 +2,7 @@ openai
 streamlit
 python-dotenv
 numexpr
-langchainhub
+langchainhub==0.1.15
 db-dtypes
 langchain
 pydantic==1.10.13
